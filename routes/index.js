@@ -1,6 +1,7 @@
 const router = require('koa-router')()
 
 const menuController = require('../controllers/index');
+const MenuModel = require('../modules');
 
 router.get('/', menuController.getMenu);
 
@@ -13,6 +14,8 @@ router.get('/test', menuController.test);
 // })
 
 router.post('/create', menuController.createMenu)
+router.post('/update', menuController.updateMenu)
+router.delete('/delete', MenuModel.deleteMenu)
 
 router.get('/string', async (ctx, next) => {
   ctx.body = 'koa2 string'

@@ -40,10 +40,29 @@ class MenuModel {
     static async createMenu(data) {
         return await schema.create({
             menu_name: data.menu_name,
-            // menu_type: data.menu_type,
-            // parent_id: data.parent_id,
             createdAt: Number(new Date().getTime()),
             updatedAt: Number(new Date().getTime())
+        })
+    }
+
+    static async updateMenu(data) {
+        console.log(444, data.id)
+        let newData = {
+            menu_name: data.menu_name
+        }
+        return await schema.update(newData, {
+            where: {
+                id: data.id
+            }
+        })
+    }
+    
+    static async deleteMenu(id) {
+        console.log(555, id)
+        return await schema.destroy({
+            where: {
+                id: id
+            }
         })
     }
 }

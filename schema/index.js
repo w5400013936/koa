@@ -13,12 +13,12 @@ const schema = (sequelize, DataTypes) => {
             field: 'menu_name'
         },
         createdAt: {
-            type: DataTypes.DATE,
+            type: DataTypes.BIGINT,
             allowNull: false,
             field: 'created_at'
         },
         updatedAt: {
-            type: DataTypes.DATE,
+            type: DataTypes.BIGINT,
             allowNull: false,
             field: 'updated_at'
         },
